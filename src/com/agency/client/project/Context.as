@@ -17,9 +17,9 @@ package com.agency.client.project {
 
 
 
-	public class RobotLegsBase extends SignalContext {
+	public class Context extends SignalContext {
 		
-		public function RobotLegsBase(contextView : DisplayObjectContainer = null, autoStartup : Boolean = true) {
+		public function Context(contextView : DisplayObjectContainer = null, autoStartup : Boolean = true) {
 			super(contextView, autoStartup);
 		}
 
