@@ -18,15 +18,11 @@ package com.agency.client.project.view {
 		public var resizeSignal : ResizeSignal;
 
 		override public function onRegister() : void {
-			// Logger.info("PreloaderMediator.onRegister()");
-			
 			view.init();
 			
-			//TODO replace with 'real' preloader logic
 			view.progress.width = view.stage.stageWidth * .75; 
 			view.progress.x = (view.stage.stageWidth *.5 - view.progress.width *.5 );
 			view.progress.y = (view.stage.stageHeight *.5 - view.progress.height *.5 );
-			
 
 			// Map the progress to the view's progress
 			assetLoader.onProgress.add(view.onProgress);
@@ -40,9 +36,6 @@ package com.agency.client.project.view {
 		}
 
 		private function onResize(r:ResizeVO):void {
-			// Logger.info("PreloaderMediator.onResized(r) : " + r.width + " / " + r.height);
-			
-			//TODO replace with 'real' preloader logic
 			view.progress.width = r.width * .75; 
 			view.progress.x = (r.width *.5 - view.progress.width *.5 );
 			view.progress.y = (r.height *.5 - view.progress.height *.5 );
@@ -50,11 +43,7 @@ package com.agency.client.project.view {
 		}
 
 		private function onChange() : void {
-			// Logger.info("PreloaderMediator.onChange(s)");
-			
-			//TODO replace with 'real' preloader logic
 			if (view.progress.visible) view.destroy();		
-			
 		}
 	}
 }

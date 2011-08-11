@@ -1,16 +1,11 @@
 package com.agency.client.project.view {
+	import org.assetloader.core.IAssetLoader;
 	import com.agency.client.project.model.vo.ResizeVO;
 	import com.agency.client.project.signals.ResizeSignal;
 	import flash.display.DisplayObjectContainer;
 	import flash.display.Sprite;
-	import flash.display.Stage;
 	import flash.events.Event;
-	import org.assetloader.core.IAssetLoader;
-	import org.osflash.thunderbolt.Logger;
 	import org.robotlegs.mvcs.Mediator;
-
-
-
 
 	public class StageMediator extends Mediator {
 		[Inject]
@@ -23,10 +18,7 @@ package com.agency.client.project.view {
 		private var _background : Sprite;
 		private var _resizeVO: ResizeVO;
 
-
-
 		override public function onRegister() : void {
-			// Logger.info("StageMediator.onRegister()");
 			
 			//Create our resizeVO only once
 			_resizeVO = new ResizeVO();
@@ -46,7 +38,6 @@ package com.agency.client.project.view {
 		}
 
 		private function onResized(e : Event) : void {
-			// Logger.info("StageMediator.onResize(e) : " + view.stage.stageWidth + " / " + view.stage.stageHeight);
 			
 			//Update the VO 
 			_resizeVO.width = view.stage.stageWidth;
@@ -58,7 +49,6 @@ package com.agency.client.project.view {
 		}
 		
 		private function onResize(r:ResizeVO):void {
-			// Logger.info("StageMediator.onResized(r) : " + r.width + " / " + r.height);
 			
 			_background.width = r.width;
 			_background.height= r.height;

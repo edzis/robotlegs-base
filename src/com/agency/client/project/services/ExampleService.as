@@ -15,8 +15,6 @@ package com.agency.client.project.services {
 		}
 		
 		public function getData(): void {
-			// Logger.info("ExampleService.getDate()");
-				
 			//Go to the db and get the data
 			var e : ExampleDataVO = new ExampleDataVO();
 			exampleModel.exampleData = e;	

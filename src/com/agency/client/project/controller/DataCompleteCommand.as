@@ -1,8 +1,8 @@
 package com.agency.client.project.controller {
 	import com.agency.client.project.model.ExampleModel;
 	import com.agency.utils.SWFAddress;
+
 	import org.assetloader.core.IAssetLoader;
-	import org.osflash.thunderbolt.Logger;
 	import org.robotlegs.mvcs.SignalCommand;
 
 
@@ -15,8 +15,6 @@ package com.agency.client.project.controller {
 		public var swfAddress : SWFAddress;
 
 		override public function execute() : void {
-			Logger.info("DataCompleteCommand.execute()");
-			
 			// If there is no deeplink then default it to map
 			// Else kick off a change signal to go to the right section ( most likely a pledge category )
 			if (swfAddress.getPathNames().length < 1 ) {

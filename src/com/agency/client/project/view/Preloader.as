@@ -14,8 +14,6 @@ package com.agency.client.project.view {
 		}
 
 		public function init() : void {
-			// Logger.info("Preloader.init()");
-
 			progress = new ProgressBar(this);
 			progress.alpha = 0;
 			addChild(progress);
@@ -24,8 +22,6 @@ package com.agency.client.project.view {
 		}
 
 		public function onProgress(s : ProgressSignal) : void {
-			// Logger.info("Preloader.onProgress()");
-
 			progress.value = s.progress;
 		}
 

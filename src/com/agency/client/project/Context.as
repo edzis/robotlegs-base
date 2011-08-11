@@ -1,4 +1,5 @@
 package com.agency.client.project {
+	import com.agency.utils.Environment;
 	import com.agency.client.project.controller.StartupCompleteCommand;
 	import com.agency.client.project.model.ExampleModel;
 	import com.agency.client.project.services.ExampleService;
@@ -42,6 +43,7 @@ package com.agency.client.project {
 			
 			// Utils
 			injector.mapSingleton(FlashVars);
+			injector.mapSingleton(Environment);
 			
 			// Views
 			mediatorMap.mapView(contextView, StageMediator);

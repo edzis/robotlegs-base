@@ -29,14 +29,14 @@ package com.agency.utils {
      */ 
     public class SWFAddress {
 
-        private  var _init:Boolean = false;
-        private  var _initChange:Boolean = false;
-        private  var _initChanged:Boolean = false;
+        private  var __init:Boolean = false;
+        private  var __initChange:Boolean = false;
+        private  var __initChanged:Boolean = false;
         private  var _strict:Boolean = true;
         private  var _value:String = '';
         private  var _queue:Array = new Array();
         private  var _queueTimer:Timer = new Timer(10);
-        private  var _initTimer:Timer = new Timer(10);
+        private  var __initTimer:Timer = new Timer(10);
         private  var _availability:Boolean = ExternalInterface.available;
    
    		/**
@@ -63,7 +63,7 @@ package com.agency.utils {
             externalChange = new Signal();
         }
         
-        private  function _initialize():Boolean {
+        private  function __initialize():Boolean {
             if (_availability) {
                 try {
                     _availability = 
@@ -78,21 +78,21 @@ package com.agency.utils {
                 }
             }
             _queueTimer.addEventListener(TimerEvent.TIMER, _callQueue);            
-            _initTimer.addEventListener(TimerEvent.TIMER, _check);
-            _initTimer.start();
+            __initTimer.addEventListener(TimerEvent.TIMER, _check);
+            __initTimer.start();
             return true;
         }
-        private  var _initializer:Boolean = _initialize();
+        private  var __initializer:Boolean = __initialize();
         
         private  function _check(event:TimerEvent):void {
-            if ((init.numListeners > 0) && !_init) {
+            if ((init.numListeners > 0) && !__init) {
                 _setValueInit(_getValue());
-                _init = true;
+                __init = true;
             }
             
             if (change.numListeners > 0 || externalChange.numListeners > 0) {
-                _initTimer.stop();
-                _init = true;
+                __initTimer.stop();
+                __init = true;
                 _setValueInit(_getValue());
             }
         }
@@ -116,7 +116,7 @@ package com.agency.utils {
                 if (arr != null)
                     ids = arr.toString(); 
             }
-            if (ids == null || !_availability || _initChanged) {
+            if (ids == null || !_availability || __initChanged) {
                 value = _value;
             } else if (value == 'undefined' || value == null) {
                 value = '';
@@ -126,22 +126,22 @@ package com.agency.utils {
 
         private  function _setValueInit(value:String):void {
             _value = value;
-            if (!_init) {
+            if (!__init) {
                 init.dispatch();
             } else {
                 change.dispatch();
                 externalChange.dispatch();
             }
-            _initChange = true;
+            __initChange = true;
         }        
 
         private  function _setValue(value:String):void {        
             if (value == 'undefined' || value == null) value = '';
-            if (_value == value && _init) return;
-            if (!_initChange) return;
+            if (_value == value && __init) return;
+            if (!__initChange) return;
             _value = value;
-            if (!_init) {
-                _init = true;
+            if (!__init) {
+                __init = true;
                 init.dispatch();
             }
             change.dispatch();
@@ -356,11 +356,11 @@ package com.agency.utils {
             if (_value == value) return;
             _value = value;
             _call('setValue', value);
-            if (_init) {
+            if (__init) {
                 change.dispatch();
                 internalChange.dispatch();
             } else {
-                _initChanged = true;
+                __initChanged = true;
             }
         }
 
