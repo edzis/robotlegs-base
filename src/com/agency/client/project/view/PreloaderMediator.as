@@ -20,6 +20,7 @@ package com.agency.client.project.view {
 		override public function onRegister() : void {
 			view.init();
 			
+			// Scale / place the progress bar
 			view.progress.width = view.stage.stageWidth * .75; 
 			view.progress.x = (view.stage.stageWidth *.5 - view.progress.width *.5 );
 			view.progress.y = (view.stage.stageHeight *.5 - view.progress.height *.5 );

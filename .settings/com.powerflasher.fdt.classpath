@@ -15,4 +15,5 @@
     <AS3Classpath generateProblems="false" sdkBased="false" type="lib" useAsSharedCode="false">swcs/robotlegs-framework-v1.4.0.swc</AS3Classpath>
     <AS3Classpath generateProblems="false" sdkBased="false" type="lib" useAsSharedCode="false">swcs/MonsterDebugger.swc</AS3Classpath>
     <AS3Classpath generateProblems="false" sdkBased="false" type="lib" useAsSharedCode="false">swcs/CasaLib_1.4.0.swc</AS3Classpath>
+    <AS3Classpath generateProblems="false" sdkBased="false" type="lib" useAsSharedCode="false">swcs/AssetLoader-v2.5.0.swc</AS3Classpath>
 </AS3Classpath>

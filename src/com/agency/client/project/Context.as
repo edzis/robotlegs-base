@@ -1,5 +1,4 @@
 package com.agency.client.project {
-	import com.agency.utils.Environment;
 	import com.agency.client.project.controller.StartupCompleteCommand;
 	import com.agency.client.project.model.ExampleModel;
 	import com.agency.client.project.services.ExampleService;
@@ -8,13 +7,15 @@ package com.agency.client.project {
 	import com.agency.client.project.view.Preloader;
 	import com.agency.client.project.view.PreloaderMediator;
 	import com.agency.client.project.view.StageMediator;
+	import com.agency.utils.Environment;
 	import com.agency.utils.SWFAddress;
-	import flash.display.DisplayObjectContainer;
-	import flash.display.Sprite;
+
 	import org.assetloader.AssetLoader;
 	import org.assetloader.core.IAssetLoader;
 	import org.robotlegs.base.ContextEvent;
 	import org.robotlegs.mvcs.SignalContext;
+
+	import flash.display.DisplayObjectContainer;
 
 
 

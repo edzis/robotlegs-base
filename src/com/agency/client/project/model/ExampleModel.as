@@ -15,16 +15,12 @@ package com.agency.client.project.model {
 		}
 
 		private function init() : void {
-			// Logger.info("ExampleModel.init()");
-
 			onDataSuccsess = new Signal();
 		}
 
 		public function set exampleData(e : ExampleDataVO) : void {
-			
 			// Set the data...
 			onDataSuccsess.dispatch(e);
-			
 		}
 	}
 }

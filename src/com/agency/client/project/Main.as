@@ -1,8 +1,7 @@
 package com.agency.client.project {
-	import logmeister.connectors.MonsterDebuggerConnector;
-	import logmeister.connectors.MonsterDebuggerV2Connector;
-	import logmeister.connectors.FlashConnector;
 	import logmeister.LogMeister;
+	import logmeister.connectors.MonsterDebuggerConnector;
+
 	import flash.display.Sprite;
 
 	public class Main extends Sprite {
